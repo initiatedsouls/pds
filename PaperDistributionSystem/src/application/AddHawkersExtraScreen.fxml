@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddHawkerExtraScreenController">
+   <children>
+      <VBox>
+         <children>
+            <GridPane hgap="10.0" prefWidth="486.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="125.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="150.0" prefWidth="150.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="125.0" prefWidth="150.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="addHwkCity" prefWidth="150.0" GridPane.columnIndex="1" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="211.0" text="Name" GridPane.rowIndex="2" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="156.0" text="Hawker Code" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="229.0" text="Mobile Number" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="181.0" text="Old House Number" GridPane.rowIndex="8" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="134.0" text="New House Number" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="220.0" text="Address Line1" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="128.0" text="Address Line2" GridPane.rowIndex="13" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="196.0" text="Locality" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="173.0" text="City" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="183.0" text="State" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="addPointNameLOV" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="addHwkName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="initials" maxWidth="-Infinity" prefHeight="25.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="3" />
+                  <TextField fx:id="addHwkCode" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="addHwkMobileNum" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="addHwkAgencyName" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="addHwkFee" text="1.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="addHwkOldHouseNum" maxWidth="-Infinity" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="addHwkNewHouseNum" maxWidth="-Infinity" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <CheckBox fx:id="addHwkActiveCheck" mnemonicParsing="false" selected="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <TextField fx:id="addBldgStreet" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <TextField fx:id="addHwkAddrLine1" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <TextField fx:id="addHwkAddrLine2" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="190.0" text="Agency Name" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="261.0" text="Fee" GridPane.rowIndex="7" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="146.0" text="Active" GridPane.rowIndex="10" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="130.0" text="Profile 1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="165.0" text="Profile 2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="143.0" text="Profile 3" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="135.0" text="Initials" GridPane.rowIndex="3" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="155.0" text="Flat/Street Name" GridPane.rowIndex="11" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="254.0" text="Employment" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="178.0" text="Comments" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="170.0" text="Point Name" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="139.0" text="Password" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="155.0" text="Bank Account Num" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="172.0" text="Bank Name" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="185.0" text="IFSC Code" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <TextField fx:id="addHwkLocality" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="addHwkStateLOV" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="addHwkProfile1" prefHeight="25.0" prefWidth="159.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="addHwkProfile2" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <TextField fx:id="addHwkProfile3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="addEmploymentLOV" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <TextField fx:id="addComments" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <TextField fx:id="addBenName" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                  <TextField fx:id="addBankAcNo" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                  <TextField fx:id="addBankName" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                  <TextField fx:id="addIfscCode" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                  <TextField fx:id="addPwd" text="password" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                  <Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="183.0" text="Beneficiary Name" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="21.0" prefWidth="581.0" text="Hawker Code and Mobile Number are required fields." textFill="#ff1111">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

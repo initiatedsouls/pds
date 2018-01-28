@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AProductsTabController">
+   <children>
+      <VBox prefHeight="800.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="151.0" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="showAllRadioButton" mnemonicParsing="false" onAction="#reloadData" text="Show All" />
+                        <RadioButton fx:id="filterRadioButton" mnemonicParsing="false" onAction="#reloadData" selected="true" text="Filter -&gt; " />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="Bill Category: " />
+                        <ComboBox fx:id="billCategoryTF" prefWidth="150.0" promptText="Bill Category" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ButtonBar>
+                           <buttons>
+                              <Button fx:id="duplicateProdCatButton" mnemonicParsing="false" onAction="#showDuplicateProductsFromToCategory" text="Copy Products from one category to another" />
+                           </buttons>
+                        </ButtonBar>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Accordion>
+              <panes>
+                <TitledPane animated="false" text="Input and Buttons Panel">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="1280.0" spacing="25.0">
+                           <children>
+                              <VBox fx:id="inputVBOX" prefHeight="300.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <VBox spacing="5.0">
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                             <children>
+                                                <Label text="Name: " />
+                                                <TextField fx:id="addProdName" promptText="Product Name" />
+                                                <Label text="Code: " />
+                                                <TextField fx:id="codeTF" prefHeight="25.0" prefWidth="101.0" promptText="Product Code" />
+                                                <Label text="Type: " />
+                                                <ComboBox fx:id="addProdType" prefWidth="150.0" promptText="Product Type" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                                             <children>
+                                                <HBox fx:id="freqHBOX" alignment="CENTER" spacing="10.0" />
+                                                <Label text="DOW: " />
+                                                <ComboBox fx:id="dowTF" prefWidth="150.0" promptText="Day of the Week" />
+                                                <Label text="1st Delivery: " />
+                                                <DatePicker fx:id="firstDeliveryDate" prefHeight="25.0" prefWidth="155.0" />
+                                                <Label text="Issue: " />
+                                                <DatePicker fx:id="issueDate" prefHeight="25.0" prefWidth="147.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                             <children>
+                                                <Label text="Price :" />
+                                                <TextField fx:id="addProdPrice" prefHeight="25.0" prefWidth="86.0" promptText="Price" />
+                                                <Label text="Monday :" />
+                                                <TextField fx:id="addProdMonday" prefHeight="25.0" prefWidth="75.0" />
+                                                <Label layoutX="10.0" layoutY="24.0" text="Tuesday :" />
+                                                <TextField fx:id="addProdTuesday" layoutX="57.0" layoutY="20.0" prefHeight="25.0" prefWidth="75.0" />
+                                                <Label layoutX="10.0" layoutY="24.0" text="Wednesday :" />
+                                                <TextField fx:id="addProdWednesday" layoutX="75.0" layoutY="20.0" prefHeight="25.0" prefWidth="75.0" />
+                                                <Label layoutX="165.0" layoutY="24.0" text="Thursday :" />
+                                                <TextField fx:id="addProdThursday" layoutX="230.0" layoutY="20.0" prefHeight="25.0" prefWidth="75.0" />
+                                                <Label layoutX="493.0" layoutY="24.0" text="Friday :" />
+                                                <TextField fx:id="addProdFriday" layoutX="562.0" layoutY="20.0" prefHeight="25.0" prefWidth="75.0" />
+                                                <Label layoutX="664.0" layoutY="24.0" text="Saturday :" />
+                                                <TextField fx:id="addProdSaturday" layoutX="733.0" layoutY="20.0" prefHeight="25.0" prefWidth="75.0" />
+                                                <Label layoutX="823.0" layoutY="24.0" text="Sunday :" />
+                                                <TextField fx:id="addProdSunday" layoutX="876.0" layoutY="20.0" prefHeight="25.0" prefWidth="75.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <HBox spacing="15.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonClicked" prefWidth="70.0" text="Save" />
+                                                <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetButtonClicked" prefWidth="70.0" text="Reset" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filterClicked" prefWidth="70.0" text="Filter" />
+                                                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearClicked" prefWidth="70.0" text="Clear" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="addProdExtraButton" mnemonicParsing="false" onAction="#addProdExtraClicked" text="Add Product : Extra Screen" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <Accordion>
+              <panes>
+                <TitledPane fx:id="prodAccordian" animated="false" text="Products">
+                     <content>
+                        <TableView fx:id="productsTable" prefWidth="1280.0">
+                          <columns>
+                            <TableColumn fx:id="prodNameColumn" prefWidth="188.0" text="Product Name" />
+                              <TableColumn fx:id="prodCodeColumn" prefWidth="113.0" text="Product Code" />
+                              <TableColumn fx:id="prodBillCategoryColumn" prefWidth="113.0" text="Bill Category" />
+                            <TableColumn fx:id="prodTypeColumn" minWidth="9.0" prefWidth="216.0" text="Product Type" />
+                              <TableColumn fx:id="supportingFreqColumn" minWidth="9.0" prefWidth="308.0" text="Supporting Frequency" />
+                              <TableColumn fx:id="priceColumn" minWidth="9.0" prefWidth="81.0" text="Price" />
+                              <TableColumn fx:id="mondayColumn" minWidth="9.0" prefWidth="75.0" text="Monday" />
+                              <TableColumn fx:id="tuesdayColumn" minWidth="9.0" prefWidth="75.0" text="Tuesday" />
+                              <TableColumn fx:id="wednesdayColumn" minWidth="9.0" prefWidth="75.0" text="Wednesday" />
+                              <TableColumn fx:id="thursdayColumn" minWidth="9.0" prefWidth="75.0" text="Thursday" />
+                              <TableColumn fx:id="fridayColumn" minWidth="9.0" prefWidth="75.0" text="Friday" />
+                              <TableColumn fx:id="saturdayColumn" minWidth="9.0" prefWidth="75.0" text="Saturday" />
+                              <TableColumn fx:id="sundayColumn" minWidth="9.0" prefWidth="75.0" text="Sunday" />
+                              <TableColumn fx:id="prodDowColumn" prefWidth="188.0" text="Day of the Week" />
+                              <TableColumn fx:id="prodFirstDeliveryDateColumn" prefWidth="188.0" text="First Delivery Date" />
+                              <TableColumn fx:id="prodIssueDateColumn" prefWidth="188.0" text="Issue Date" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <VBox alignment="TOP_CENTER" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TabPane VBox.vgrow="ALWAYS">
+                     <tabs>
+                        <Tab closable="false" text="Product Special Price">
+                           <content>
+                              <TableView fx:id="spclPriceTable" prefHeight="80.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn fx:id="spclPriceDateCol" prefWidth="150.0" text="Date" />
+                                  <TableColumn fx:id="spclPriceCol" prefWidth="150.0" text="Price" />
+                                </columns>
+                              </TableView>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

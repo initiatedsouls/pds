@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.APausedCustomerTabController">
+   <children>
+      <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="43.0" spacing="5.0">
+                     <children>
+                              <Label layoutX="10.0" layoutY="14.0" text="City: " />
+                              <ComboBox fx:id="cityTF" layoutX="84.0" layoutY="10.0" prefWidth="120.0" promptText="Select City" />
+                        <Label text="Point Name :" />
+                        <ComboBox fx:id="addPointName" prefWidth="150.0" />
+                        <Label text="Hawker : " />
+                        <ComboBox fx:id="hawkerComboBox" prefWidth="150.0" promptText="Select Hawker" />
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                           <children>
+                              <Label fx:id="hawkerNameLabel" />
+                              <Label fx:id="hawkerMobLabel" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox VBox.vgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="lineNumTable" prefHeight="575.0" HBox.hgrow="NEVER">
+                           <columns>
+                              <TableColumn fx:id="lineNumColumn" prefWidth="240.0" resizable="false" text="Line Number" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="pausedCustTable" prefHeight="575.0" prefWidth="1039.0" HBox.hgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="custCodeCol" prefWidth="156.0" text="Customer Code" />
+                            <TableColumn fx:id="custNameCol" prefWidth="161.0" text="Customer Name" />
+                              <TableColumn fx:id="custMobCol" prefWidth="156.0" text="Mobile Num" />
+                              <TableColumn fx:id="custAddr1Col" prefWidth="156.0" text="Address Line1" />
+                              <TableColumn fx:id="custAddr2Col" prefWidth="156.0" text="Address Line2" />
+                              <TableColumn fx:id="custHouseSeqCol" prefWidth="156.0" text="House Seq" />
+                              <TableColumn fx:id="prodNameCol" prefWidth="161.0" text="Product Name" />
+                              <TableColumn fx:id="prodTypeCol" prefWidth="156.0" text="Product Type" />
+                              <TableColumn fx:id="pausedDateCol" prefWidth="156.0" text="Stop Date" />
+                              <TableColumn fx:id="resumeDateCol" prefWidth="156.0" text="Reminder Resume Date" />
+                              <TableColumn fx:id="subTypeCol" prefWidth="156.0" text="Subscription Type" />
+                              <TableColumn fx:id="freqCol" prefWidth="156.0" text="Frequency" />
+                              <TableColumn fx:id="paymentTypeCol" prefWidth="161.0" text="Payment Type" />
+                              <TableColumn fx:id="subCostCol" prefWidth="156.0" text="Subscription Cost" />
+                              <TableColumn fx:id="srvChargeCol" prefWidth="156.0" text="Tea Expenses" />
+                          </columns>
+                        </TableView>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

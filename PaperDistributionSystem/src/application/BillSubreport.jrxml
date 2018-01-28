@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-12-05T20:17:59 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BillSubreport" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty" uuid="435ca022-c2cc-41c8-9032-2d400a444245">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PDSTokyo"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="DS" uuid="c58451a7-d5f7-4871-b87b-b9f38038afa9">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PDSTokyo"/>
+		<parameter name="BILL_INVOICE_NUM" class="java.lang.Long"/>
+		<queryString>
+			<![CDATA[SELECT "BILLING_LINES"."BILL_INVOICE_NUM",
+	"BILLING_LINES"."LINE_NUM",
+	"BILLING_LINES"."PRODUCT",
+	"BILLING_LINES"."AMOUNT",
+	"BILLING_LINES"."TEA_EXPENSES"
+FROM "BILLING_LINES"
+WHERE "BILLING_LINES"."BILL_INVOICE_NUM"=$P{BILL_INVOICE_NUM}]]>
+		</queryString>
+		<field name="BILL_INVOICE_NUM" class="java.lang.Long"/>
+		<field name="LINE_NUM" class="java.lang.Long"/>
+		<field name="PRODUCT" class="java.lang.String"/>
+		<field name="AMOUNT" class="java.lang.Double"/>
+		<field name="TEA_EXPENSES" class="java.lang.Double"/>
+		<group name="BILL_INVOICE_NUM">
+			<groupExpression><![CDATA[$F{BILL_INVOICE_NUM}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="BILL_INVOICE_NUM" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[SELECT "BILLING_LINES"."BILL_LINE_ID",
+	"BILLING_LINES"."BILL_INVOICE_NUM",
+	"BILLING_LINES"."LINE_NUM",
+	"BILLING_LINES"."PRODUCT",
+	NVL("BILLING_LINES"."AMOUNT",0.0) AS "AMOUNT",
+	NVL("BILLING_LINES"."TEA_EXPENSES",0.0) AS "TEA_EXPENSES"
+FROM "BILLING_LINES"
+WHERE "BILLING_LINES"."BILL_INVOICE_NUM"=$P{BILL_INVOICE_NUM}
+AND  (SELECT NVL("BILLING_LINES"."AMOUNT",0.0) + NVL("BILLING_LINES"."TEA_EXPENSES",0.0) FROM DUAL)>0.0]]>
+	</queryString>
+	<field name="BILL_LINE_ID" class="java.lang.Long"/>
+	<field name="BILL_INVOICE_NUM" class="java.lang.Long"/>
+	<field name="LINE_NUM" class="java.lang.Integer"/>
+	<field name="PRODUCT" class="java.lang.String"/>
+	<field name="AMOUNT" class="java.lang.Double"/>
+	<field name="TEA_EXPENSES" class="java.lang.Double"/>
+	<sortField name="LINE_NUM"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="24" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<componentElement>
+				<reportElement mode="Transparent" x="0" y="0" width="163" height="24" uuid="454085e2-53c8-407d-8f8b-2abb7c1931f2">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
+					<datasetRun subDataset="DS" uuid="a3a625a2-8d9a-4f43-ad6d-3211cfbbad80">
+						<datasetParameter name="BILL_INVOICE_NUM">
+							<datasetParameterExpression><![CDATA[$P{BILL_INVOICE_NUM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="76" uuid="98b105ae-4f84-459c-975a-2491f7a15153">
+						<jr:columnHeader style="Table_CH" height="12">
+							<staticText>
+								<reportElement key="" style="Table_TD" x="0" y="0" width="76" height="12" uuid="f2aa333d-4b5a-4270-adf0-72209c3e5660"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true" isUnderline="false"/>
+								</textElement>
+								<text><![CDATA[Publication]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="12">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="76" height="12" uuid="e7e63f76-baf5-4528-b6d0-2b9c59c01f3b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="6" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PRODUCT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="0b726ba7-7f23-4cdb-8924-6b1734991ab7">
+						<jr:columnHeader style="Table_CH" height="12">
+							<staticText>
+								<reportElement style="Table_TD" x="0" y="0" width="50" height="12" uuid="1c8cfd85-4535-4aef-aced-1e1460bce9b1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true" isUnderline="false"/>
+								</textElement>
+								<text><![CDATA[Amount]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="12">
+							<textField pattern="#,##0.00#" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="50" height="12" uuid="0a3835ef-161a-4118-a8c6-ceddc6ef028c"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{AMOUNT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="37" uuid="a1c58252-33f3-45fa-a3d6-51b528d7f612">
+						<jr:columnHeader style="Table_CH" height="12">
+							<staticText>
+								<reportElement style="Table_TD" x="0" y="0" width="37" height="12" uuid="8af87378-3b77-4f01-b7c1-1fab6401ce1c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7.5" isBold="true" isUnderline="false"/>
+								</textElement>
+								<text><![CDATA[Misc Expenses]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="12">
+							<textField pattern="#,##0.00#" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="37" height="12" uuid="fa453d34-ab1e-4744-aa77-12dc015716f2"/>
+								<box rightPadding="3"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TEA_EXPENSES}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

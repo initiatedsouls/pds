@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2016-07-27T00:03:30 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HawkerAllLineProdCodeWiseList" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8abbec41-494b-4fe7-b388-e5ff89008bf6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PDSTokyo"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Crosstab_CH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CG" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CT" mode="Opaque" backcolor="#005FB3">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="HAWKER_CODE" class="java.lang.String"/>
+	<parameter name="TESTDATE" class="java.sql.Date"/>
+	<parameter name="DayOfWeek" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT "HWK_ALL_LINE_PROD_LIST"."HWK_ID",
+	"HWK_ALL_LINE_PROD_LIST"."HWK_NAME",
+	"HWK_ALL_LINE_PROD_LIST"."HWK_CODE",
+	"HWK_ALL_LINE_PROD_LIST"."ACTIVE_FLAG",
+	"HWK_ALL_LINE_PROD_LIST"."AGENCY_NAME",
+	"HWK_ALL_LINE_PROD_LIST"."HWK_MOB_NUM",
+	"HWK_ALL_LINE_PROD_LIST"."LINE_HWK_ID",
+	"HWK_ALL_LINE_PROD_LIST"."LINE_ID",
+	"HWK_ALL_LINE_PROD_LIST"."LINE_NUM",
+	"HWK_ALL_LINE_PROD_LIST"."DIST_HWK_ID",
+	"HWK_ALL_LINE_PROD_LIST"."LINE_DIST_ID",
+	"HWK_ALL_LINE_PROD_LIST"."DIST_LINE_ID",
+	"HWK_ALL_LINE_PROD_LIST"."DIST_LINE_NUM",
+	"HWK_ALL_LINE_PROD_LIST"."DIST_NAME",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_NAME",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_HWK_ID",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_LINE_ID",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_LINE_NUM",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_HWK_CODE",
+	"HWK_ALL_LINE_PROD_LIST"."HOUSE_SEQ",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_ID",
+	"HWK_ALL_LINE_PROD_LIST"."CUST_CODE",
+	"HWK_ALL_LINE_PROD_LIST"."SUB_ID",
+	"HWK_ALL_LINE_PROD_LIST"."SUB_PROD_ID",
+	"HWK_ALL_LINE_PROD_LIST"."SUB_CUST_ID",
+	"HWK_ALL_LINE_PROD_LIST"."PRD",
+	"HWK_ALL_LINE_PROD_LIST"."SUB_DOW",
+	"HWK_ALL_LINE_PROD_LIST"."SUB_FREQ",
+	"HWK_ALL_LINE_PROD_LIST"."PROD_ID",
+	"HWK_ALL_LINE_PROD_LIST"."PROD_NAME",
+	"HWK_ALL_LINE_PROD_LIST"."PROD_CODE",
+	"HWK_ALL_LINE_PROD_LIST"."FIRST_DELIVERY_DATE",
+	"HWK_ALL_LINE_PROD_LIST"."SUB_START_DATE"
+FROM "HWK_ALL_LINE_PROD_LIST"
+WHERE 
+	 "HWK_ALL_LINE_PROD_LIST"."HWK_CODE" = $P{HAWKER_CODE}]]>
+	</queryString>
+	<field name="HWK_ID" class="java.math.BigDecimal"/>
+	<field name="HWK_NAME" class="java.lang.String"/>
+	<field name="HWK_CODE" class="java.lang.String"/>
+	<field name="ACTIVE_FLAG" class="java.lang.String"/>
+	<field name="AGENCY_NAME" class="java.lang.String"/>
+	<field name="HWK_MOB_NUM" class="java.lang.String"/>
+	<field name="LINE_HWK_ID" class="java.math.BigDecimal"/>
+	<field name="LINE_ID" class="java.math.BigDecimal"/>
+	<field name="LINE_NUM" class="java.math.BigDecimal"/>
+	<field name="DIST_HWK_ID" class="java.math.BigDecimal"/>
+	<field name="LINE_DIST_ID" class="java.math.BigDecimal"/>
+	<field name="DIST_LINE_ID" class="java.math.BigDecimal"/>
+	<field name="DIST_LINE_NUM" class="java.math.BigDecimal"/>
+	<field name="DIST_NAME" class="java.lang.String"/>
+	<field name="CUST_NAME" class="java.lang.String"/>
+	<field name="CUST_HWK_ID" class="java.math.BigDecimal"/>
+	<field name="CUST_LINE_ID" class="java.math.BigDecimal"/>
+	<field name="CUST_LINE_NUM" class="java.math.BigDecimal"/>
+	<field name="CUST_HWK_CODE" class="java.lang.String"/>
+	<field name="HOUSE_SEQ" class="java.math.BigDecimal"/>
+	<field name="CUST_ID" class="java.math.BigDecimal"/>
+	<field name="CUST_CODE" class="java.math.BigDecimal"/>
+	<field name="SUB_ID" class="java.math.BigDecimal"/>
+	<field name="SUB_PROD_ID" class="java.math.BigDecimal"/>
+	<field name="SUB_CUST_ID" class="java.math.BigDecimal"/>
+	<field name="PRD" class="java.lang.String"/>
+	<field name="SUB_DOW" class="java.lang.String"/>
+	<field name="SUB_FREQ" class="java.lang.String"/>
+	<field name="PROD_ID" class="java.math.BigDecimal"/>
+	<field name="PROD_NAME" class="java.lang.String"/>
+	<field name="PROD_CODE" class="java.lang.String"/>
+	<field name="FIRST_DELIVERY_DATE" class="java.sql.Date"/>
+	<field name="SUB_START_DATE" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="802" height="60" uuid="6b0c35b9-d01e-4cfe-84fd-208404726280"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hawker All Lines Products Counts" + "\n" + "Hawker Name : " + $F{HWK_NAME} + "  Code : " + $F{HWK_CODE} + "  Agency : " + $F{HWK_MOB_NUM} + "  For Date : " + $P{TESTDATE}.toLocaleString() + "  " + $P{DayOfWeek}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="71" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<crosstab>
+				<reportElement x="0" y="0" width="802" height="71" uuid="d6b55ef3-941c-4adc-99f2-8ad677a2f768">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<rowGroup name="LINE_NUM" width="20" totalPosition="End">
+					<bucket class="java.math.BigDecimal">
+						<bucketExpression><![CDATA[$F{LINE_NUM}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="20" height="20" uuid="0a648029-5aa1-4c08-9a48-f78a69587569"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{LINE_NUM}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CT">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="b2652d82-8fa4-4615-86a6-724f1a04ac01"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<rowGroup name="DIST_NAME" width="60">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{DIST_NAME}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="60" height="20" uuid="0e614dc6-7f80-434e-ac6e-bc36cbf63cb1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{DIST_NAME}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents>
+							<staticText>
+								<reportElement x="0" y="0" width="-2147483648" height="-2147483648" uuid="af64ff1a-90cc-465b-b7ea-66bda0039dc0"/>
+								<text><![CDATA[Total DIST_NAME]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="PROD_CODE" height="20" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{PROD_CODE}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab_CH">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="20" uuid="ecb9e203-5086-4afe-9125-e715617e8b6e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{PROD_CODE}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Opaque" style="Crosstab_CT">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="4303e1e7-b339-4368-8c7d-b68de6ad18f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="PROD_CODE_MEASURE" class="java.lang.Integer" calculation="Count">
+					<measureExpression><![CDATA[$F{PROD_CODE}]]></measureExpression>
+				</measure>
+				<crosstabCell width="40" height="20">
+					<cellContents mode="Opaque" style="Crosstab_CD">
+						<textField isBlankWhenNull="true">
+							<reportElement x="0" y="0" width="40" height="20" uuid="92672af4-2dc4-46a5-ade2-245eff6f2ebb"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Arial" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{PROD_CODE_MEASURE}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" columnTotalGroup="PROD_CODE">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="3bff2dde-c048-4cdc-94f8-f7e8536c97f5"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Arial" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{PROD_CODE_MEASURE}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="40" height="20" rowTotalGroup="LINE_NUM">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField>
+							<reportElement x="0" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="b2b92746-5499-4bee-a9f5-80e606fdfe42"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Arial" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{PROD_CODE_MEASURE}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="LINE_NUM" columnTotalGroup="PROD_CODE">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="fbb380ba-0b46-44f7-a13f-21aaa61cecec"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Arial" size="8"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{PROD_CODE_MEASURE}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="DIST_NAME">
+					<cellContents mode="Opaque" style="Crosstab_CG">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="20" uuid="570932f0-8148-4dac-a86e-11f7821924f7"/>
+							<textFieldExpression><![CDATA[$V{PROD_CODE_MEASURE}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="60" height="20" rowTotalGroup="DIST_NAME" columnTotalGroup="PROD_CODE">
+					<cellContents mode="Opaque" style="Crosstab_CT">
+						<textField>
+							<reportElement x="0" y="0" width="60" height="20" forecolor="#FFFFFF" uuid="94090217-46a1-4016-8d4f-71ab6a6684d4"/>
+							<textFieldExpression><![CDATA[$V{PROD_CODE_MEASURE}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+		</band>
+	</summary>
+</jasperReport>

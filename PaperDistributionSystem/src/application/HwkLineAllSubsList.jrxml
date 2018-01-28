@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.0.final using JasperReports Library version 6.3.0  -->
+<!-- 2017-02-08T00:24:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HwkLineAllSubsList" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cbc78f29-314b-4511-a88f-82bf0570151f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PDSTokyo"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#E1B171">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#E6DCCF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#D5CBBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFF4E6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#FFE6BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#FFF5E6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="TableDS" uuid="cadb4fd3-4432-402f-a4eb-2b1cc1db789a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PDSTokyo"/>
+		<parameter name="HAWKER_CODE" class="java.lang.String"/>
+		<parameter name="LINE_NUM" class="java.lang.String"/>
+		<parameter name="PROD_NAME" class="java.lang.String"/>
+		<parameter name="TESTDATE" class="java.sql.Date"/>
+		<queryString>
+			<![CDATA[SELECT "HWK_LINE_SUBS_LIST"."LINE_NUM",
+	"HWK_LINE_SUBS_LIST"."CUST_CODE",
+	"HWK_LINE_SUBS_LIST"."CUST_NAME",
+	"HWK_LINE_SUBS_LIST"."SEQ",
+	"HWK_LINE_SUBS_LIST"."ADDR",
+	"HWK_LINE_SUBS_LIST"."PROD_CODE",
+	"HWK_LINE_SUBS_LIST"."PROD_NAME",
+	"HWK_LINE_SUBS_LIST"."PAYMENT_TYPE",
+	"HWK_LINE_SUBS_LIST"."SUB_TYPE",
+	"HWK_LINE_SUBS_LIST"."FREQUENCY",
+	"HWK_LINE_SUBS_LIST"."DOW",
+	"HWK_LINE_SUBS_LIST"."PRD",
+	"HWK_LINE_SUBS_LIST"."HAWKER_CODE"
+FROM "HWK_LINE_SUBS_LIST"
+WHERE 
+	"HWK_LINE_SUBS_LIST"."HAWKER_CODE"=$P{HAWKER_CODE}
+	AND "HWK_LINE_SUBS_LIST"."LINE_NUM"=$P{LINE_NUM}
+AND ("HWK_LINE_SUBS_LIST"."PROD_NAME"=$P{PROD_NAME}  OR $P{PROD_NAME} IS NULL)]]>
+		</queryString>
+		<field name="LINE_NUM" class="java.math.BigDecimal"/>
+		<field name="CUST_CODE" class="java.math.BigDecimal"/>
+		<field name="CUST_NAME" class="java.lang.String"/>
+		<field name="SEQ" class="java.math.BigDecimal"/>
+		<field name="ADDR" class="java.lang.String"/>
+		<field name="PROD_CODE" class="java.lang.String"/>
+		<field name="PROD_NAME" class="java.lang.String"/>
+		<field name="PAYMENT_TYPE" class="java.lang.String"/>
+		<field name="SUB_TYPE" class="java.lang.String"/>
+		<field name="FREQUENCY" class="java.lang.String"/>
+		<field name="DOW" class="java.lang.String"/>
+		<field name="PRD" class="java.lang.String"/>
+		<field name="HAWKER_CODE" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="CountsDS" uuid="6874a716-6937-4884-985d-1ba4a607704a">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PDSTokyo"/>
+		<parameter name="HAWKER_CODE" class="java.lang.String"/>
+		<parameter name="LINE_NUM" class="java.lang.String"/>
+		<parameter name="PROD_NAME" class="java.lang.String"/>
+		<parameter name="TESTDATE" class="java.sql.Date"/>
+		<queryString>
+			<![CDATA[SELECT "HWK_LINE_SUBS_LIST_COUNTS"."PROD_NAME",
+"HWK_LINE_SUBS_LIST_COUNTS"."PRD",
+	"HWK_LINE_SUBS_LIST_COUNTS"."CNT",
+	"HWK_LINE_SUBS_LIST_COUNTS"."HAWKER_CODE",
+	"HWK_LINE_SUBS_LIST_COUNTS"."LINE_NUM"
+FROM "HWK_LINE_SUBS_LIST_COUNTS"
+WHERE "HWK_LINE_SUBS_LIST_COUNTS"."HAWKER_CODE"=$P{HAWKER_CODE}
+AND "HWK_LINE_SUBS_LIST_COUNTS"."LINE_NUM"=$P{LINE_NUM}
+AND ("HWK_LINE_SUBS_LIST_COUNTS"."PROD_NAME"=$P{PROD_NAME}  OR $P{PROD_NAME} IS NULL)]]>
+		</queryString>
+		<field name="PROD_NAME" class="java.lang.String"/>
+		<field name="PRD" class="java.lang.String"/>
+		<field name="CNT" class="java.math.BigDecimal"/>
+		<field name="HAWKER_CODE" class="java.lang.String"/>
+		<field name="LINE_NUM" class="java.math.BigDecimal"/>
+	</subDataset>
+	<parameter name="HAWKER_CODE" class="java.lang.String"/>
+	<parameter name="LINE_NUM" class="java.lang.String"/>
+	<parameter name="PROD_NAME" class="java.lang.String"/>
+	<parameter name="TESTDATE" class="java.sql.Date"/>
+	<queryString>
+		<![CDATA[SELECT "HWK_LINE_SUBS_LIST"."LINE_NUM",
+	"HWK_LINE_SUBS_LIST"."CUST_CODE",
+	"HWK_LINE_SUBS_LIST"."CUST_NAME",
+	"HWK_LINE_SUBS_LIST"."SEQ",
+	"HWK_LINE_SUBS_LIST"."ADDR",
+	"HWK_LINE_SUBS_LIST"."PROD_CODE",
+	"HWK_LINE_SUBS_LIST"."PROD_NAME",
+	"HWK_LINE_SUBS_LIST"."PAYMENT_TYPE",
+	"HWK_LINE_SUBS_LIST"."SUB_TYPE",
+	"HWK_LINE_SUBS_LIST"."FREQUENCY",
+	"HWK_LINE_SUBS_LIST"."DOW",
+	"HWK_LINE_SUBS_LIST"."PRD",
+	"HWK_LINE_SUBS_LIST"."HAWKER_CODE"
+FROM "HWK_LINE_SUBS_LIST"
+WHERE 
+	"HWK_LINE_SUBS_LIST"."HAWKER_CODE"=$P{HAWKER_CODE}
+	AND "HWK_LINE_SUBS_LIST"."LINE_NUM"=$P{LINE_NUM}
+AND ("HWK_LINE_SUBS_LIST"."PROD_NAME"=$P{PROD_NAME}  OR $P{PROD_NAME} IS NULL)]]>
+	</queryString>
+	<field name="LINE_NUM" class="java.math.BigDecimal"/>
+	<field name="CUST_CODE" class="java.math.BigDecimal"/>
+	<field name="CUST_NAME" class="java.lang.String"/>
+	<field name="SEQ" class="java.math.BigDecimal"/>
+	<field name="ADDR" class="java.lang.String"/>
+	<field name="PROD_CODE" class="java.lang.String"/>
+	<field name="PROD_NAME" class="java.lang.String"/>
+	<field name="PAYMENT_TYPE" class="java.lang.String"/>
+	<field name="SUB_TYPE" class="java.lang.String"/>
+	<field name="FREQUENCY" class="java.lang.String"/>
+	<field name="DOW" class="java.lang.String"/>
+	<field name="PRD" class="java.lang.String"/>
+	<field name="HAWKER_CODE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="12" width="555" height="30" uuid="ed592f31-2ec5-4aab-bf33-92b84db4db57"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hawker : " + $P{HAWKER_CODE} + "  Line : " + $P{LINE_NUM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="175">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="51" uuid="564a7e06-3eed-48c8-95a7-73d767afd78c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="TableDS" uuid="770822e7-5467-4ebd-946c-e82f9e1d4968">
+						<datasetParameter name="HAWKER_CODE">
+							<datasetParameterExpression><![CDATA[$P{HAWKER_CODE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LINE_NUM">
+							<datasetParameterExpression><![CDATA[$P{LINE_NUM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="PROD_NAME">
+							<datasetParameterExpression><![CDATA[$P{PROD_NAME}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="67" uuid="af63ed77-8fe2-4cf7-9fd0-38c7f045d5d5">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="21">
+							<staticText>
+								<reportElement x="0" y="0" width="67" height="21" uuid="e80674e4-bcf5-40b3-a4e7-a530db68cd17">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<text><![CDATA[H Seq]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="67" height="20" uuid="a06e1c19-e749-4804-8f1c-fa3fefd107ed">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{SEQ}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="e9bd6d56-5686-44dc-95e7-a1dd8ee3b763">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="21">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="78" height="21" uuid="3720f94d-c9bd-4bdc-aff4-1cae93c2dabd">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<text><![CDATA[Cust Code]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="78" height="20" uuid="09c5a73a-8598-48f4-a235-23a7d45762b2">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{CUST_CODE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="109" uuid="f2be9d4a-774c-4df1-8fd2-56b63e689157">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader style="Table 1_CH" height="21">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="21" uuid="b4ebae43-c028-41a7-942c-5a11fb7f9c32"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<text><![CDATA[Cust Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="109" height="20" uuid="b66c6107-fa0f-4726-83c0-1f80720e11f2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{CUST_NAME}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="107" uuid="4ab0aee9-3e8b-4510-b75a-368df82303f7">
+						<jr:columnHeader style="Table 1_CH" height="21">
+							<staticText>
+								<reportElement x="0" y="0" width="107" height="21" uuid="a0aafdb6-d73c-4c80-b9ff-8ea202f381a5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<text><![CDATA[Address]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="107" height="20" uuid="a265cf20-e068-4a1f-a0f5-bdfba51a5fb7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ADDR}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="62" uuid="8b9fddbe-3eec-4981-8181-b7dfcfb55bc3">
+						<jr:columnHeader style="Table 1_CH" height="21">
+							<staticText>
+								<reportElement x="0" y="0" width="62" height="21" uuid="f5e91720-35cc-44d3-a1df-73d69e102a44"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<text><![CDATA[Payment]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="62" height="20" uuid="c2dfd2ae-6fc2-47aa-81b1-31e7e312e7e5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PAYMENT_TYPE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="132" uuid="9127f145-0d1d-4642-8e25-401894c0fe2a">
+						<jr:columnHeader style="Table 1_CH" height="21">
+							<staticText>
+								<reportElement x="0" y="0" width="132" height="21" uuid="0b96f29a-ce7e-48ad-93f6-cc48459a2c2f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial"/>
+								</textElement>
+								<text><![CDATA[Product]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 1_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="132" height="20" uuid="96145d7f-5c14-4ae6-83ff-ae3aef009344"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PRD}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="60" width="555" height="40" uuid="2113bceb-e571-46c5-b055-4abf27d40dac"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="109" width="555" height="66" uuid="3dbbc11b-3b25-41ff-9e45-f68e2d6ae0ee">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 2_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 2_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 2_TD"/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
+					<property name="com.jaspersoft.studio.components.autoresize.proportional" value="true"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="CountsDS" uuid="5e390c29-f545-47c8-870b-4fd6021fccdc">
+						<datasetParameter name="HAWKER_CODE">
+							<datasetParameterExpression><![CDATA[$P{HAWKER_CODE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="LINE_NUM">
+							<datasetParameterExpression><![CDATA[$P{LINE_NUM}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="PROD_NAME">
+							<datasetParameterExpression><![CDATA[$P{PROD_NAME}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="280" uuid="6007120a-308d-4484-a101-ee6b644a5e67">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader style="Table 2_CH" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="280" height="20" uuid="f937e1bf-d8b6-41b4-a01c-a155274ddc0c">
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="10"/>
+								</textElement>
+								<text><![CDATA[Product]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<box topPadding="0"/>
+							<textField>
+								<reportElement x="0" y="0" width="280" height="20" uuid="4efc1c6e-e857-414b-b58e-abe91feabac2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PRD}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="120" uuid="bb1d99e8-8894-49b7-a69c-aaf50b4aa3c2">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:columnHeader style="Table 2_CH" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="20" uuid="af31ebbb-03b1-43af-b29b-77598fff730b"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="10"/>
+								</textElement>
+								<text><![CDATA[# of copies]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table 2_TD" height="20">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<textField>
+								<reportElement x="0" y="0" width="120" height="20" uuid="7a9b9233-f9cb-4ca8-8d53-218d0268c6b1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Arial" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{CNT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

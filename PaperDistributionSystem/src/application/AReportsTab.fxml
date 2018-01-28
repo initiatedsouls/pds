@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AReportsTabController">
+	<children>
+		<VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+				<HBox alignment="CENTER_LEFT" spacing="10.0">
+					<children>
+						<Label layoutX="10.0" layoutY="14.0" text="City: " />
+						<ComboBox fx:id="cityTF" layoutX="84.0" layoutY="10.0" prefWidth="120.0" promptText="Select City" />
+						<Label text="Point Name : " />
+						<ComboBox fx:id="addPointName" prefWidth="150.0" promptText="Select Point" />
+						<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="100.0" text="Hawker Code :" />
+						<ComboBox fx:id="hawkerComboBox" prefWidth="150.0" promptText="Select Hawker" />
+					</children>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<VBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</VBox.margin>
+				</HBox>
+            <VBox spacing="10.0" style="-fx-border-radius: 3; -fx-border-color: #333333;">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+      				<HBox alignment="CENTER_LEFT" spacing="10.0">
+      					<children>
+      						<Label alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="100.0" text="Line Number" />
+      						<ComboBox fx:id="addLineNumLOV" prefWidth="150.0" />
+      						<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="99.0" text="Product Name : " />
+      						<ComboBox fx:id="prodNameLOV2" prefHeight="25.0" prefWidth="151.0" />
+      						<Label text="Date : " textAlignment="RIGHT" />
+      						<DatePicker fx:id="firstForDate" />
+      					</children>
+      					<padding>
+      						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      					</padding>
+      				</HBox>
+                  <HBox spacing="10.0">
+                     <children>
+      						<Button fx:id="lineAllSubButton" mnemonicParsing="false" onAction="#lineAllSubButtonClicked" text="Generate Line All Sub Report" />
+                        <Button fx:id="lineAllSubSmallButton" mnemonicParsing="false" onAction="#lineAllSubSmallButtonClicked" text="Generate Line Sub Report - Small" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="115.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+				<HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-radius: 3; -fx-border-color: #333333;">
+					<children>
+						<Label text="Date : " textAlignment="RIGHT" />
+						<DatePicker fx:id="forDate" />
+						<Label text="Hawker All Line Subscription Report : " />
+						<Button fx:id="hwkAllLineSubButton" mnemonicParsing="false" onAction="#hwkAllLineSubButtonClicked" text="Product + Freq Wise" HBox.hgrow="ALWAYS" />
+						<Button fx:id="hwkAllLineSubProdCodeButton" mnemonicParsing="false" onAction="#hwkAllLineSubProdCodeButtonClicked" text="Product Code Wise" />
+						<Button fx:id="hwkAllLineSubProdNameButton" mnemonicParsing="false" onAction="#hwkAllLineSubProdNameButtonClicked" text="Product Name Wise" />
+					</children>
+					<VBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</VBox.margin>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+				</HBox>
+				<HBox style="-fx-border-radius: 3; -fx-border-color: #333333;">
+					<children>
+						<VBox alignment="TOP_RIGHT" spacing="15.0">
+							<children>
+								<VBox spacing="10.0">
+									<children>
+										<Label text="Selected Magazine's delivery dates this month : " />
+										<Label fx:id="datesList">
+											<VBox.margin>
+												<Insets left="5.0" />
+											</VBox.margin>
+										</Label>
+									</children>
+									<VBox.margin>
+										<Insets left="5.0" />
+									</VBox.margin>
+								</VBox>
+								<GridPane alignment="CENTER" minHeight="-Infinity" prefHeight="130.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" prefWidth="180.0" />
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" prefWidth="180.0" />
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" prefWidth="180.0" />
+										<ColumnConstraints hgrow="SOMETIMES" minWidth="180.0" prefWidth="180.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="190.0" text="Line Number : " />
+										<ComboBox fx:id="addLineNumLOV2" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="1" />
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="181.0" text="Product Name : " GridPane.rowIndex="1" />
+										<ComboBox fx:id="prodNameLOV" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="181.0" text="Subscription Type : " GridPane.rowIndex="2" />
+										<ComboBox fx:id="subscriptionTypeLOV" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="181.0" text="Payment Type : " GridPane.rowIndex="3" />
+										<ComboBox fx:id="paymentTypeLOV" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="181.0" text="Frequency : " GridPane.columnIndex="2" />
+										<ComboBox fx:id="frequencyLOV" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="3" />
+										<ComboBox fx:id="dowLOV" prefHeight="25.0" prefWidth="182.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="204.0" text="Day of Week : " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+										<ComboBox fx:id="statusLOV" prefHeight="25.0" prefWidth="199.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+										<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="220.0" text="Status : " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+										<Button fx:id="generateFilteredReportButton" mnemonicParsing="false" onAction="#generateFilteredReportButtonClicked" prefHeight="31.0" prefWidth="195.0" text="Generate Filtered Report" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+									</children>
+								</GridPane>
+							</children>
+						</VBox>
+					</children>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<VBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</VBox.margin>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" spacing="15.0">
+					<VBox.margin>
+						<Insets />
+					</VBox.margin>
+					<children>
+						<VBox prefHeight="168.0" spacing="10.0" style="-fx-border-radius: 3; -fx-border-color: #333333;" HBox.hgrow="ALWAYS">
+							<children>
+								<Label text="End Date and Resume Date Reports : " />
+								<VBox alignment="CENTER_LEFT" spacing="5.0">
+									<children>
+										<Label text="Without Filter : " />
+										<HBox alignment="CENTER_LEFT" spacing="10.0">
+											<children>
+												<Button mnemonicParsing="false" onAction="#upcomingEndDateListClicked" text="Upcoming End Date List" />
+												<Button mnemonicParsing="false" onAction="#upcomingResumeDateListClicked" text="Upcoming Resume Date List" />
+											</children>
+										</HBox>
+									</children>
+								</VBox>
+								<VBox alignment="CENTER_LEFT" spacing="5.0">
+									<children>
+										<Label text="Filter with : " />
+										<HBox alignment="CENTER_LEFT" spacing="10.0">
+											<children>
+												<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="88.0" text="Line Number : " />
+												<ComboBox fx:id="addLineNumLOV3" prefHeight="25.0" prefWidth="180.0" />
+												<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="87.0" text="Product Name : " />
+												<ComboBox fx:id="prodNameLOV1" prefHeight="25.0" prefWidth="181.0" />
+											</children>
+										</HBox>
+									</children>
+								</VBox>
+								<HBox alignment="CENTER_LEFT" spacing="10.0">
+									<children>
+										<Button mnemonicParsing="false" onAction="#upcomingEndDateListFilteredClicked" text="Upcoming End Date List" />
+										<Button mnemonicParsing="false" onAction="#upcomingResumeDateListFilteredClicked" text="Upcoming Resume Date List" />
+									</children>
+								</HBox>
+							</children>
+							<opaqueInsets>
+								<Insets />
+							</opaqueInsets>
+							<HBox.margin>
+								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+							</HBox.margin>
+							<padding>
+								<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+							</padding>
+						</VBox>
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-radius: 3; -fx-border-color: #333333;">
+					<children>
+						<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="78.0" text="Line Number" />
+						<ComboBox fx:id="addLineNumLOV4" prefWidth="150.0" />
+						<Button mnemonicParsing="false" onAction="#fixedRateSubCostBtnClicked" text="Product Fixed Rate Subscription Cost Report" />
+					</children>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<VBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</VBox.margin>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-radius: 3; -fx-border-color: #333333;">
+					<children>
+						<Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="78.0" text="Invoice Date " />
+						<ComboBox fx:id="invoiceDateLOV" prefWidth="150.0" />
+						<Button fx:id="allLineInvDateSummaryButton1" mnemonicParsing="false" onAction="#allLineInvSummaryButtonClicked" prefHeight="25.0" prefWidth="250.0" text="Generate All Line Invoice Summary" />
+					</children>
+					<padding>
+						<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+					</padding>
+					<VBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</VBox.margin>
+				</HBox>
+			</children>
+		</VBox>
+	</children>
+</AnchorPane>

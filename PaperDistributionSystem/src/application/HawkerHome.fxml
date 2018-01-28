@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HawkerHomeController">
+	<children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <MenuBar HBox.hgrow="ALWAYS">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                              <MenuItem mnemonicParsing="false" onAction="#logoutClicked" text="Logout" />
+                          <MenuItem mnemonicParsing="false" onAction="#exitMenuOptionClicked" text="Exit" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Operations">
+                        <items>
+                              <MenuItem mnemonicParsing="false" onAction="#refreshClicked" text="Refresh" />
+                              <MenuItem mnemonicParsing="false" onAction="#changeMobileClicked" text="Edit Hawker Details" />
+                              <MenuItem mnemonicParsing="false" onAction="#changePasswordClicked" text="Change Password" />
+                          <MenuItem mnemonicParsing="false" onAction="#updateProductFixedRateClicked" text="Update Product Fixed Rate" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help" visible="false">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" spacing="10.0">
+                           <children>
+            						<Label fx:id="adminAgencyName" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Admin Agency Name" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets right="25.0" />
+                                 </padding>
+            						</Label>
+                              <Label fx:id="adminMobileLabel" text="Mobile" />
+                              <Label fx:id="adminAddrLabel" text="Addr" visible="false" wrapText="true" />
+                           </children>
+                           <padding>
+                              <Insets right="25.0" />
+                           </padding>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#updateProductFixedRateClicked" prefHeight="25.0" prefWidth="164.0" text="Update Product Fixed Rate" />
+                        <ButtonBar prefHeight="25.0" prefWidth="164.0">
+                          <buttons>
+                              <Button mnemonicParsing="false" onAction="#refreshClicked" text="Refresh" />
+                            <Button mnemonicParsing="false" onAction="#logoutClicked" text="Logout" />
+                          </buttons>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </ButtonBar>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+      		<VBox prefHeight="800.0" prefWidth="1280.0">
+      			<children>
+      				<TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+      					<tabs>
+      						<Tab fx:id="customersTab" text="Customers">
+      							<content>
+      								<fx:include source="A-CustomersTab.fxml" />
+      							</content>
+      						</Tab>
+      						<Tab fx:id="lineInfoTab" text="Line Information">
+      							<content>
+      								<fx:include source="A-LineInfoTab.fxml" />
+      							</content>
+      						</Tab>
+      						<Tab fx:id="pausedCustTab" text="Stopped Customers">
+      							<content>
+      								<fx:include source="A-PausedCustomersTab.fxml" />
+      							</content>
+      						</Tab>
+      						<Tab fx:id="lineDistTab" text="Line Distributor">
+      							<content>
+      								<fx:include source="A-LineDistributorTab.fxml" />
+      							</content>
+      						</Tab>
+      						<Tab fx:id="reportsTab" text="Reports">
+      							<content>
+      								<fx:include source="AReportsTab.fxml" />
+      							</content>
+      						</Tab>
+      					</tabs>
+      					<VBox.margin>
+      						<Insets bottom="10.0" />
+      					</VBox.margin>
+      				</TabPane>
+      			</children>
+      		</VBox>
+         </children>
+      </VBox>
+	</children>
+</AnchorPane>

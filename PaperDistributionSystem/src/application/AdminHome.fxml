@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminHomeController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <MenuBar>
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                              <MenuItem mnemonicParsing="false" onAction="#logoutClicked" text="Logout" />
+                          <MenuItem mnemonicParsing="false" onAction="#exitMenuOptionClicked" text="Exit" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Operations">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#refreshClicked" text="Refresh" />
+                              <MenuItem mnemonicParsing="false" onAction="#changePasswordClicked" text="Change Password" />
+                              <MenuItem mnemonicParsing="false" onAction="#exportDataClicked" text="Export Data" />
+                              <MenuItem mnemonicParsing="false" onAction="#updateAdminDetails" text="Update Admin Details" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help" visible="false">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="25.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="adminAgencyName" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="Admin Agency Name" textAlignment="RIGHT" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets right="25.0" />
+                                 </padding>
+                              </Label>
+                              <Label fx:id="adminMobileLabel" text="Mobile" />
+                              <Label fx:id="adminAddrLabel" text="Addr" visible="false" wrapText="true" />
+                           </children>
+                           <padding>
+                              <Insets right="25.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#refreshClicked" text="Refresh" />
+                              <Button mnemonicParsing="false" onAction="#changePasswordClicked" text="Change Password" />
+                              <Button mnemonicParsing="false" onAction="#exportDataClicked" text="Export Data" />
+                              <Button mnemonicParsing="false" onAction="#updateAdminDetails" prefHeight="25.0" text="Update Admin Details" />
+                              <Button mnemonicParsing="false" onAction="#logoutClicked" text="Logout" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1280.0">
+               <children>
+                  <VBox prefHeight="691.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <TabPane fx:id="tabPane" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                           <tabs>
+                              <Tab text="Hawker Information">
+                                 <content>
+                                    <fx:include source="A-HawkerInfoTab.fxml" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Customers">
+                                 <content>
+                                    <fx:include source="A-CustomersTab.fxml" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Line Information">
+                                 <content>
+                                    <fx:include source="A-LineInfoTab.fxml" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Stopped Customers">
+                                 <content>
+                                    <fx:include source="A-PausedCustomersTab.fxml" />
+                                 </content>
+                              </Tab>
+                              <Tab text="Products">
+                                 <content>
+                                    <fx:include source="AProductsTab.fxml" />
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

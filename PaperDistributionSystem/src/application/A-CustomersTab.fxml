@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ACustomerInfoTabController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="25.0" prefWidth="151.0" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="showAllRadioButton" mnemonicParsing="false" onAction="#reloadData" text="Show All" />
+                        <RadioButton fx:id="filterRadioButton" mnemonicParsing="false" onAction="#reloadData" selected="true" text="Filter -&gt; " />
+                     </children>
+                  </HBox>
+                              <Label layoutX="10.0" layoutY="14.0" text="City: " />
+                              <ComboBox fx:id="cityTF" layoutX="84.0" layoutY="10.0" prefWidth="120.0" promptText="Select City" />
+                  <Label text="Point Name :" />
+                  <ComboBox fx:id="addPointName" prefWidth="150.0" />
+                  <Label text="Hawker Code :" />
+                  <ComboBox fx:id="addCustHwkCode" prefWidth="150.0" />
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <children>
+                        <Label fx:id="hawkerNameLabel" />
+                        <Label fx:id="hawkerMobLabel" />
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <Accordion>
+              <panes>
+                <TitledPane animated="false" expanded="false" text="Input and Buttons Panel">
+                     <content>
+                        <HBox alignment="CENTER_LEFT" prefHeight="75.0" prefWidth="1280.0" spacing="15.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="894.0" text="   Line Number                  Customer Name                       Initials                Mobile Number                     House Sequence" />
+                                    <HBox alignment="CENTER_LEFT" prefWidth="900.0" spacing="10.0">
+                                       <children>
+                                          <ComboBox fx:id="addCustLineNum" prefHeight="25.0" prefWidth="114.0" promptText="Line Number" />
+                                          <TextField fx:id="addCustName" accessibleHelp="Customer Name" accessibleText="Customer Name" promptText="Customer Name" />
+                                          <TextField fx:id="addCustInitials" layoutX="858.0" layoutY="10.0" prefHeight="25.0" prefWidth="73.0" promptText="Initials" />
+                                          <TextField fx:id="addCustMobile" promptText="Mobile Number" />
+                                          <TextField fx:id="addCustHouseSeq" layoutX="532.0" layoutY="10.0" prefHeight="25.0" prefWidth="74.0" promptText="House Seq" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                       <children>
+                                          <Label alignment="CENTER_RIGHT" text="Old HNum:" />
+                                          <TextField fx:id="addCustOldHouseNum" prefHeight="25.0" prefWidth="58.0" promptText="Old H#" />
+                                          <Label alignment="CENTER_RIGHT" text="New HNum:" />
+                                          <TextField fx:id="addCustNewHouseNum" prefHeight="25.0" prefWidth="58.0" promptText="New H#" />
+                                          <Label alignment="CENTER_RIGHT" text="Flat/Street  Name:" />
+                                          <TextField fx:id="addCustBuildingStreet" prefHeight="25.0" prefWidth="132.0" promptText="Flat/Street Name" />
+                                          <Label alignment="CENTER_RIGHT" text="Addr Line1:" />
+                                          <TextField fx:id="addCustAddrLine1" prefHeight="25.0" prefWidth="147.0" promptText="Address Line 1" />
+                                          <Label alignment="CENTER_RIGHT" text="Addr Line2:" />
+                                          <TextField fx:id="addCustAddrLine2" prefHeight="25.0" prefWidth="138.0" promptText="Address Line 2" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="addCustLocality" prefHeight="25.0" prefWidth="88.0" promptText="Locality" />
+                                          <TextField fx:id="addCustCity" prefHeight="25.0" prefWidth="111.0" promptText="City" />
+                                          <ComboBox fx:id="addCustState" prefWidth="150.0" promptText="State" visibleRowCount="30" />
+                                          <ComboBox fx:id="addCustProf1" prefHeight="25.0" prefWidth="120.0" promptText="Profile 1" />
+                                          <ComboBox fx:id="addCustProf2" prefHeight="25.0" prefWidth="117.0" promptText="Profile 2" />
+                                          <TextField fx:id="addCustProf3" layoutX="854.0" layoutY="10.0" prefHeight="25.0" prefWidth="111.0" promptText="Profile3" />
+                                          <ComboBox fx:id="addCustEmployment" prefHeight="25.0" prefWidth="122.0" promptText="Job Searching" />
+                                          <TextField fx:id="addCustComments" promptText="Comments" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Label prefHeight="17.0" prefWidth="1080.0" text="  Locality                   City                               State                                       Profile 1                           Profile 2                          Profile 3                       Employment                    Comments" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" top="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER" minHeight="164.0" minWidth="175.0" spacing="10.0">
+                                 <children>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <VBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="saveCustomerButton" mnemonicParsing="false" onAction="#addCustomerClicked" prefHeight="25.0" prefWidth="74.0" text="Save" />
+                                                <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetClicked" prefHeight="25.0" prefWidth="74.0" text="Reset" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" spacing="10.0">
+                                             <children>
+                                                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#filterCustomersClicked" prefHeight="25.0" prefWidth="82.0" text="Search" />
+                                                <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearClicked" text="Clear Search" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="addCustExtraButton" mnemonicParsing="false" onAction="#addCustomerExtraScreenClicked" text="Add Customer : Extra Screen" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+            <VBox alignment="TOP_CENTER" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="ACustInfoTable" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="hawkerCodeColumn" prefWidth="87.0" text="Hawker Code" />
+                        <TableColumn fx:id="lineNumColumn" prefWidth="67.0" text="Line#" />
+                        <TableColumn fx:id="houseSeqColumn" prefWidth="65.0" text="House Seq" />
+                        <TableColumn fx:id="customerCodeColumn" prefWidth="126.0" text="Customer Code" />
+                        <TableColumn fx:id="customerNameColumn" prefWidth="250.0" text="Customer Name" />
+                        <TableColumn fx:id="customerInitialsColumn" prefWidth="35" text="Initials" />
+                        <TableColumn fx:id="mobileNumColumn" prefWidth="125.0" text="Mobile Number" />
+                  		<TableColumn fx:id="totalDueColumn" prefWidth="87.0" text="Total Due" />
+                        <TableColumn fx:id="oldHouseNumColumn" prefWidth="48.0" text="Old H#" />
+                        <TableColumn fx:id="newHouseNumColumn" prefWidth="58.0" text="New H#" />
+                        <TableColumn fx:id="buildingStreetColumn" prefWidth="278.0" text="Flat/Street Name" />
+                        <TableColumn fx:id="addrLine1Column" prefWidth="192.0" text="Address Line1" />
+                        <TableColumn fx:id="addrLine2Column" prefWidth="192.0" text="Address Line2" />
+                        <TableColumn fx:id="localityColumn" prefWidth="192.0" text="Locality" />
+                        <TableColumn fx:id="cityColumn" prefWidth="192.0" text="City" />
+                        <TableColumn fx:id="stateColumn" prefWidth="192.0" text="State" />
+                        <TableColumn fx:id="profile1Column" prefWidth="192.0" text="Profile1" />
+                        <TableColumn fx:id="profile2Column" prefWidth="192.0" text="Profile2" />
+                        <TableColumn fx:id="profile3Column" prefWidth="192.0" text="Profile3" />
+                        <TableColumn fx:id="employmentColumn" prefWidth="192.0" text="Employment" />
+                        <TableColumn fx:id="commentsColumn" prefWidth="250.0" text="Comments" />
+                     </columns>
+                  </TableView>
+                  <TabPane>
+                     <tabs>
+                        <Tab closable="false" text="Subscriptions">
+                           <content>
+                              <VBox alignment="TOP_CENTER">
+                                 <children>
+                                    <TableView fx:id="subscriptionsTable" prefHeight="200.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+                                       <columns>
+                                          <TableColumn fx:id="subsIdColumn" prefWidth="60.0" text="ID" />
+                                          <TableColumn fx:id="subsProdNameColumn" prefWidth="120.0" text="Product Name" />
+                                          <TableColumn fx:id="subsProdCodeColumn" prefWidth="120.0" text="Product Code" />
+                                          <TableColumn fx:id="subsProdTypeColumn" prefWidth="114.0" text="Product Type" />
+                                          <TableColumn fx:id="subsTypeColumn" prefWidth="114.0" text="Subscription Type" />
+                                          <TableColumn fx:id="subsPaymentTypeColumn" prefWidth="95.0" text="Payment Type" />
+                                          <TableColumn fx:id="subPriceColumn" prefWidth="74.0" text="Price" />
+                                          <TableColumn fx:id="subAddToBillColumn" prefWidth="74.0" text="Add to Bill" />
+                                          <TableColumn fx:id="subsServiceChargeColumn" prefWidth="45" text="Tea" />
+                                          <TableColumn fx:id="subsFreqColumn" prefWidth="94.0" text="Frequency" />
+                                          <TableColumn fx:id="subsDOWColumn" prefWidth="94.0" text="Day Of Week" />
+                                          <TableColumn fx:id="subsStatusColumn" prefWidth="70.0" text="Status" />
+                                          <TableColumn fx:id="subsStartDateColumn" prefWidth="86.0" text="Start Date" />
+                                          <TableColumn fx:id="subsStopDateColumn" prefWidth="86.0" text="End Date" />
+                                          <TableColumn fx:id="subsPausedDateColumn" prefWidth="86.0" text="Stop Date" />
+                                          <TableColumn fx:id="subsResumeDateColumn" prefWidth="86.0" text="Reminder Date" />
+                                          <TableColumn fx:id="subsNumberColumn" prefWidth="86.0" text="Subscription Number" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Billing">
+                           <content>
+                              <VBox alignment="TOP_CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" spacing="15.0">
+                                       <children>
+                                          <Label text="Invoice Date : " />
+                                          <ComboBox fx:id="invoiceDateLOV" prefWidth="150.0" />
+                                          <Label text="Bill :" />
+                                          <Label fx:id="totalBillLabel" />
+                                          <Label text="Due :" />
+                                          <Label fx:id="totalDueLabel" />
+                                          <Label text="Net :" />
+                                          <Label fx:id="netBillLabel" />
+                                          <Label text="Month :" />
+                                          <Label fx:id="monthLabel" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="10.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <TableView fx:id="billingTable" prefHeight="200.0" prefWidth="200.0">
+                                       <columns>
+                                          <TableColumn fx:id="prodCol" prefWidth="100.0" text="Product" />
+                                          <TableColumn fx:id="amountCol" prefWidth="100.0" text="Amount" />
+                                          <TableColumn fx:id="teaExpensesCol" prefWidth="100.0" text="Tea Expenses" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Stop History">
+                           <content>
+                              <VBox alignment="TOP_CENTER">
+                                 <children>
+                                    <TableView fx:id="stopHistoryTable" prefHeight="200.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+                                       <columns>
+                                          <TableColumn fx:id="stpstopHistoryIdColumn" prefWidth="60.0" text="StopHist ID" />
+                                          <TableColumn fx:id="stpsubsIdColumn" prefWidth="60.0" text="Sub ID" />
+                                          <TableColumn fx:id="stpsubsProdCodeColumn" prefWidth="60.0" text="Code" />
+                                          <TableColumn fx:id="stpsubsProdNameColumn" prefWidth="120.0" text="Product Name" />
+                                          <TableColumn fx:id="stpsubsTypeColumn" prefWidth="120.0" text="Subscription Type" />
+                                          <TableColumn fx:id="stpsubsFreqColumn" prefWidth="120.0" text="Subscription Freq" />
+                                          <TableColumn fx:id="stpsubsDOWColumn" prefWidth="120.0" text="Day of the Week" />
+                                          <TableColumn fx:id="stpsubsStopDateColumn" prefWidth="86.0" text="Stop Date" />
+                                          <TableColumn fx:id="stpsubsResumeDateColumn" prefWidth="86.0" text="Resume Date" />
+                                          <TableColumn fx:id="stpstopHistAmountColumn" prefWidth="86.0" text="Amount" />
+                                       </columns>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </TableView>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </Tab>
+						<Tab closable="false" text="Stop History Backup">
+							<content>
+								<VBox alignment="TOP_CENTER">
+									<children>
+										<TableView fx:id="stopHistoryBkpTable" prefHeight="200.0" prefWidth="900.0" VBox.vgrow="ALWAYS">
+											<columns>
+												<TableColumn fx:id="stphstopHistoryIdColumn" prefWidth="60.0" text="StopHist ID" />
+												<TableColumn fx:id="stphsubsIdColumn" prefWidth="60.0" text="Sub ID" />
+	                                   								<TableColumn fx:id="stphsubsProdCodeColumn" prefWidth="60.0" text="Code" />
+												<TableColumn fx:id="stphsubsProdNameColumn" prefWidth="120.0" text="Product Name" />
+												<TableColumn fx:id="stphsubsTypeColumn" prefWidth="120.0" text="Subscription Type" />
+												<TableColumn fx:id="stphsubsFreqColumn" prefWidth="120.0" text="Subscription Freq" />
+												<TableColumn fx:id="stphsubsDOWColumn" prefWidth="120.0" text="Day of the Week" />
+												<TableColumn fx:id="stphsubsStopDateColumn" prefWidth="86.0" text="Stop Date" />
+												<TableColumn fx:id="stphsubsResumeDateColumn" prefWidth="86.0" text="Resume Date" />
+												<TableColumn fx:id="stphstopHistAmountColumn" prefWidth="86.0" text="Amount" />
+											</columns>
+	                                            <VBox.margin>
+	                                               <Insets top="5.0" />
+	                                            </VBox.margin>
+										</TableView>
+									</children>
+								</VBox>
+							</content>
+						</Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
