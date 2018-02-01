@@ -2217,6 +2217,8 @@ public class BillingUtilityClass {
 		} catch (JRException e) {
 			Main._logger.debug("Error during Bill PDF Summary Generation: ", e);
 			// e.printStackTrace();
+		} catch(Exception e) {
+			Main._logger.debug("Error during Bill PDF Summary Generation: ", e);
 		}
 		return null;
 
